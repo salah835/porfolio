@@ -1,15 +1,36 @@
+// @ts-nocheck
 /* eslint-disable react/no-unescaped-entities */
+import Lottie from "lottie-react";
 import React from "react";
 import "./hero.css";
+import developeur from "../../animation/developeur.json";
+import { useRef } from "react";
+import { motion } from "framer-motion";
+
 const Hero = () => {
+  const lottieRef = useRef();
   return (
     <section className="hero flex">
       <div className="left-section ">
         <div className="parent-avatar flex">
-          <img src="./me.png" className="avatar" alt="" />
+          <motion.img
+            initial={{ transform:'scale(0)' }}
+            animate={{ transform:'scale(1.1)' }}
+            transition={{ damping: 5 ,type:'spring',stiffness:100 }}
+            src="./me.png"
+            className="avatar"
+            alt=""
+          />
           <div className="icon-verified"></div>
         </div>
-        <h1 className="title">Web and mobile developer</h1>
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          className="title"
+        >
+          Web and mobile developer
+        </motion.h1>
         <p className="sub-title">
           I'm salah mbarki web and mobile developer based in Nabeul Tunisia ,
           I'm Professional, motivated,ambitious and creative, I am always
@@ -22,7 +43,15 @@ const Hero = () => {
           <div className="icon icon-linkedin"></div>
         </div>
       </div>
-      <div className="right-section animation border">animation</div>
+      <div className="right-section animation">
+        <Lottie
+          lottieRef={lottieRef}
+          onLoadedImages={() => {
+            lottieRef.current.setSpeed(1.5);
+          }}
+          animationData={developeur}
+        />
+      </div>
     </section>
   );
 };

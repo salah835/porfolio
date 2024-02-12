@@ -43,13 +43,16 @@ main section.left-section.flex button.active {
   padding: 0.8rem 0;
   border: 1px solid var(--blue);
 }
+.light main section.left-section.flex button.active {
+  border: 1px solid #000;
+}
 
 /* ============= =============
 2.right-section => cards
 =============== ============= */
 
 main section.right-section {
-  /* flex-grow: 1; */
+  flex-grow: 1;
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 16px;
@@ -57,13 +60,23 @@ main section.right-section {
 }
 
 .carde {
+  box-shadow:-1px 1px 1px rgba(0, 0, 0, 0.2),1px 1px 1px rgba(0, 0, 0, 0.15);;
   border: 1px solid rgba(93, 188, 252, 0.3);
   transition: 0.3s;
   border-radius: 5px;
   background-image: linear-gradient(
     rgba(255, 255, 255, 0.05),
     rgba(255, 255, 255, 0.05)
+    
   );
+  max-width: 260px;
+}
+.light .card , .light .carde:hover {
+border: none;}
+
+.light .card:hover{
+  background-color: rgb(246, 246, 246);
+
 }
 
 .carde:hover {
@@ -79,6 +92,10 @@ main section.right-section {
 
 .carde .box {
   padding: 1rem 0.4rem;
+}
+.carde .box .title {
+  color: var(--title);
+  text-transform: capitalize;
 }
 .carde .box .subtitle {
   color: var(--subtitle);

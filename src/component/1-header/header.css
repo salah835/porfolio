@@ -66,6 +66,7 @@ header .mode {
   color: var(--subtitle);
   border: 1px solid rgba(244, 165, 96, 0.249);
   transition: 0.2s;
+  box-shadow: 1px 1px 40px rgba(35 35 36 0.2);
 }
 header .icon-menu:hover,
 header .mode:hover {
@@ -82,6 +83,9 @@ header .icon-close:hover {
   font-size: 1.6rem;
   color: crimson;
   rotate: 180deg;
+}
+header .icon-sun{
+  color: rgb(255 156 0);
 }
 /* ===============
 3. Modal ==pop up
